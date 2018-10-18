@@ -6,12 +6,12 @@ public class UserSummary {
 
     private Long id;
     private String username;
-    private DBFile avatar;
+    private byte[] avatarData;
 
-    public UserSummary(Long id, String username, DBFile avatar) {
+    public UserSummary(Long id, String username, byte[] avatarData) {
         this.id = id;
         this.username = username;
-        this.avatar = avatar;
+        this.avatarData = avatarData;
     }
 
     public Long getId() { return id; }
@@ -28,7 +28,11 @@ public class UserSummary {
         this.username = username;
     }
 
-    public DBFile getAvatar() { return avatar; }
+    public byte[] getAvatarData() {
+        return avatarData;
+    }
 
-    public void setAvatar(DBFile avatar) { this.avatar = avatar; }
+    public void setAvatarData(byte[] avatarData) {
+        this.avatarData = avatarData;
+    }
 }

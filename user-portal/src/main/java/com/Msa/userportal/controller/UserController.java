@@ -30,11 +30,11 @@ public class UserController {
     }
 
 //    @PreAuthorize("hasRole('USER')")
-//    @Secured("ROLE_USER")
+    @Secured("ROLE_USER")
     @GetMapping("/user/me")
     public UserSummary getCurrentUser(@CurrentUser UserPrincipal currentUser) {
         UserSummary userSummary = new UserSummary(currentUser.getId(), currentUser.getUsername(),
-                currentUser.getAvatar());
+                currentUser.getAvatar().getData());
         return userSummary;
     }
 

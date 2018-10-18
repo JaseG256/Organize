@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service(value = "userServicer")
 public class UserServiceImpl implements UserService {
 
     @Autowired

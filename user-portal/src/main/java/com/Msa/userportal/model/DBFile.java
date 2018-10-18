@@ -1,12 +1,13 @@
 package com.Msa.userportal.model;
 
+import com.Msa.userportal.model.audit.UserDateAudit;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "files")
-public class DBFile {
+public class DBFile extends UserDateAudit {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -62,5 +63,13 @@ public class DBFile {
 
     public void setData(byte[] data) {
         this.data = data;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

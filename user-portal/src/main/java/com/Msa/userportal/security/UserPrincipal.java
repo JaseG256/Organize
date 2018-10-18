@@ -73,6 +73,10 @@ public class UserPrincipal implements UserDetails {
 
     public DBFile getAvatar() { return avatar; }
 
+    public void setAvatar(DBFile avatar) {
+        this.avatar = avatar;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
